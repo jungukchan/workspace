@@ -1,6 +1,8 @@
 "use strict"; //이크마 스크립트를 준수한다.
 
-//랜더링 해주는 js
+// -- 랜더링 해주는 js --
+
+const UserStrorage = require("../../modules/UserStorage");
 
 const output = {
     home : (req, res) => {
@@ -11,29 +13,28 @@ const output = {
     },
 };
 
-const user = {
-    id : ["aaaa", 'bbbb', 'cccc'],
-    paword : ["1234", "1235", "1236"],
-}
 
 const process = {
     login : (req, res) => {
         const id = req.body.id,
-        pawrod = req.body.psword;
+        psword = req.body.psword;
 
+        const user = UserStrorage.getUser("id", "psword");
+
+        const response = {};
         if(user.id.includes(id)){
             const idx = user.id.indexOf(id);
-            if(user.paword[idx] === pawrod){
-                return res.json({
-                    success : true,
-                });
+            console.log(user.psword[idx]);
+            console.log(psword);
+            if(user.psword[idx] === psword){
+                response.success = true;
+                return res.json(response);
             }
         }
 
-        return res.json({
-            success : false,
-            msg : "로그인에 실패하셨습니다.",
-        });
+        response.success = false;
+        response.msg="로그인에 실패하셨습니다.";
+        return res.json(response);
     },
 };
 
