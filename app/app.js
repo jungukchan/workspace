@@ -40,3 +40,17 @@ module.exports = app;
 
 // package.json 만들때 사용하는 명령어
 // npm init -y
+
+
+/**
+ * nodemon 을 이용하여, 서버의 재기동 없이 처리가 가능하다.
+ * npm nodemon install -g 
+ */
+
+
+/**
+ * git 처리시
+ * - git add .
+ * - git push
+ * - git push origin master
+ */
