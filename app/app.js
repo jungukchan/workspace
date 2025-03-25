@@ -25,6 +25,7 @@ app.listen(3001, ()=> {
 //nps install express --save
 // 모듈
 const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 
 // 라우팅
@@ -34,6 +35,9 @@ const home = require("./src/routes/home"); // 이경로에 있는 index.js를 �
 app.set("views", "./src/views");
 app.set("view engine", "ejs"); //view 엔진 (ejs를 ui엔진을 이용) - //npm install ejs -s
 app.use(express.static(`${__dirname}/src/public`)); //정적 리렉토리 정보를 변환해서 처리해줌
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+
 app.use("/", home); //미들웨어를 등록하는 메서드
 
 module.exports = app;
