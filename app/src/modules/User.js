@@ -7,11 +7,11 @@ class User {
         this.body = body;
     }
 
-    login(){
+    async login(){
         const client = this.body;
 
-        const {id, psword} = userStorage.getUesrInfo(client.id);
-        //console.log(id, psword);
+        //primise가 넘어오기전에 기다리라는 명령어가 필요하다 -> await => async에서만 사용 가능
+        const {id, psword} = await userStorage.getUesrInfo(client.id);
 
         if(id){
             if(id === client.id && psword === client.psword){
