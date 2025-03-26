@@ -58,3 +58,12 @@ module.exports = app;
  * - git push
  * - git push origin master
  */
+
+/**
+ * 순서 
+ * 1. app.js : node에서 사용하는 패키지(npm), 라우팅, 앱셋팅
+ * 2. index.js : 라우터에서 들어온 경로를 가지고 분기 시켜줌 (자바:Controller에서 어노테이션 처리해서 경로 지정 하듯 처리)
+ * 3. home.ctrl.js : 라우터에서 들어온 경로를 세부 컨트롤러 처리함 (자바:Controller에서 Service 분기처리)
+ * 4. user.js / userStorage.js : 들어온 로직을 체크 및 구현하는 부분 (자바:ServiceImpl 영역)
+ * 
+ */

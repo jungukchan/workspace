@@ -31,3 +31,11 @@ function login (){
         console.error(new Error("로그인 중 오류 발생!!"));
     });
 }
+
+
+
+/*** 2025.03.25 여기부터...
+ * 
+ * https://www.youtube.com/watch?v=69JiX9rGNmI&list=PLSK4WsJ8JS4cQ-niGNum4bkK_THHOizTs&index=21
+ * 
+ */

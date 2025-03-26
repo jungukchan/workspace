@@ -19,6 +19,18 @@ class UserStrorage {
 
         return newUser;
     }
+
+    static getUesrInfo(id){
+        const users = this.#user;
+        const idx = users.id.indexOf(id);
+        const userKeys = Object.keys(users); // ==> [id, psword, name] key값만 list로 만듬
+        const userInfo = userKeys.reduce((newUser, info) => {
+            newUser[info] = users[info][idx];
+            return newUser;
+        },{});
+
+        return userInfo;
+    }
     
 }
 
