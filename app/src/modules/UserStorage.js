@@ -56,4 +56,8 @@ module.exports = UserStrorage;
  * > git tag v1.0
  * > git tag
  * > git log --oneline
+ * > git push origin v1.0
+ * > git add --all
+ * > git push origin :v1.0   (git 서버 tag 삭제)
+ * > git tag -d v1.0 (git 로그 tag 삭제)
  */
