@@ -46,3 +46,14 @@ class UserStrorage {
 }
 
 module.exports = UserStrorage;
+
+
+/**
+ * git 정리
+ * > git add .
+ * > git commit -m "메세지"
+ * > git push origin master
+ * > git tag v1.0
+ * > git tag
+ * > git log --oneline
+ */
