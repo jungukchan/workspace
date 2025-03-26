@@ -8,19 +8,26 @@ class User {
     }
 
     login(){
-        const body = this.body;
+        const client = this.body;
 
-        const {id, psword} = userStorage.getUesrInfo(body.id);
+        const {id, psword} = userStorage.getUesrInfo(client.id);
         //console.log(id, psword);
 
         if(id){
-            if(id === body.id && psword === body.psword){
+            if(id === client.id && psword === client.psword){
                 return {success : true};
             }
             return {success : false, msg : "비밀번호가 다릅니다."};
         }
 
         return {success : false, msg : "존재하지 않는 아이디 입니다."};
+    }
+
+    register(){
+        const client = this.body;
+        const response = userStorage.save(client);
+
+        return response;
     }
     
 }
